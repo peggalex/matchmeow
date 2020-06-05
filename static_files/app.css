@@ -325,7 +325,7 @@ svg.settings:hover {
   }
 
   #showFavSelector > button.selected {
-    border-bottom: solid var(--pink);
+    border-bottom: solid thick var(--pink);
   }
   .slideshowNodesContainer {
     height: 80vh;
@@ -351,6 +351,10 @@ svg.settings:hover {
 
   nav {
     width: 100%;
+  }
+
+  .slideshowImages {
+    scroll-snap-type: none !important;
   }
 
 }

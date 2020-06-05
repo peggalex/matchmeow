@@ -37,6 +37,7 @@
     width: 100%;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
