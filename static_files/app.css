@@ -1,0 +1,356 @@
+body{
+  overflow-y: hidden;
+}
+
+:root {
+  --pink: #E01577;
+}
+
+@font-face {
+  font-family: 'VarelaRound';
+  src: url('fonts/Varela_Round/VarelaRound-Regular.ttf') format('truetype');
+}
+
+html {
+  background-color: #FFF0F5;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.centerCross {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  position: relative; /* so it has z-index*/
+  height: 15vh;
+  background-color: white;
+  box-shadow: 0 15px 35px #BEB0B6;
+}
+
+header h1 {
+  font-family: VarelaRound, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.05em;
+}
+
+header .logo {
+  height: 2rem;
+  margin: 0 0.2rem 0 1rem;
+  padding-top: 0.3rem;
+}
+
+nav {
+  width: 20rem;
+  background-color: #DFCDD6;
+}
+
+nav .heading {
+  border-bottom: solid thin #CEBAC4;
+}
+
+nav .heading h2{
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+}
+
+nav .heading svg {
+  margin: 0 0.5rem 0 1rem;
+}
+
+.paw {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 100%;
+  transform: scale(0.75);
+}
+
+.profile {
+  max-width: 66vw;
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 15px 35px #BEB0B6;
+  background-color: white;
+}
+
+.profile img {
+  max-height: 50vh;
+  width: 20rem;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.profile h1, .profile p{
+  margin: 0;
+}
+
+.profileName {
+  margin-bottom: 0.5rem;
+}
+
+.profile hr{
+  opacity: .25;
+}
+
+.profileQuote{
+  font-style: italic;
+}
+
+.profileAge, .profileAddress, .profileQuote, .profileInfo .upper .mapPin{
+  color: #807077;
+}
+
+.profileQuote{
+  position: relative;
+  margin: 0.5rem 0 0 0.5rem !important;
+}
+
+#quotationMark {
+  position: absolute;
+  width: 2rem;
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.profileInfo .lower {
+  position: relative;
+  min-height: 3rem;
+}
+
+.profileInfo .upper .mapPin {
+  height: 1rem;
+  transform: translate(0, 0.15rem);
+}
+
+.secondaryInfo {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.profileAge::after {
+  margin: 0 0.25rem;
+  content: '•';
+}
+
+.profileInfo {
+  padding: 1rem;
+  min-height: 9rem;
+}
+
+.favouriteTab{
+  padding: 1rem 0 0 0.5rem;
+}
+
+.profileContainer > button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: solid #EF55A0;
+  /*border: solid var(--pink);*/
+  margin: 0 3rem;
+}
+
+.profileContainer > button > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #EF55A0;
+  /*fill: var(--pink);*/
+}
+
+.profileContainer > button path {
+  fill: #EF55A0;
+  /*fill: var(--pink);*/
+}
+
+.profileContainer > button {
+  transition: background-color 0.5s, border-color 0.5s, transform 0.5s;
+}
+
+.profileContainer > button:hover {
+  transform: scale(1.2);
+}
+
+.profileContainer > button path {
+  transition: fill 0.5s;
+}
+
+.profileContainer > button.selected {
+  /*background-color: #EF55A0;*/
+  background-color: var(--pink);
+  border-color: white
+}
+
+.profileContainer > button.selected path {
+  fill: white !important; 
+}
+
+.profileContainer > button:hover{
+  cursor: pointer;
+}
+
+.pink {
+  /*color: #EF55A0;*/
+  color: var(--pink);
+}
+
+.favouriteTab{
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+#settingsIconContainer {
+  margin-left: auto;
+  margin-right: 2rem;
+  border: none;
+  background-color: transparent;
+}
+
+svg.settings:hover {
+  cursor: pointer;
+  animation: rotate 3s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+#settingsContainer {
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#settings {
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: white;
+  position: relative; 
+}
+
+#settings button {
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  transition: color linear 0.5s;
+}
+#settings button:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+#settings label {
+  margin-bottom: 0.5rem;
+}
+
+#settings select {
+  margin-bottom: 1rem;
+}
+
+#settings h2 {
+  margin-top: 0;
+}
+
+#settings input {
+  text-align: right;
+  width: 3rem;
+}
+
+#intervalNote {
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+  font-size: 0.6rem;
+}
+
+@media (orientation: portrait) {
+  .profileContainer {
+    position: relative;
+  }
+
+  .closeButton{ 
+    margin-left: -4rem !important; 
+    position: absolute; 
+  }
+  .favButton{ 
+    margin-left: 4rem !important; 
+    position: absolute;
+  }
+
+  .profileContainer > button {
+    opacity: 0.5;
+    margin-top: -3rem;
+  }
+
+  .profile > img { width: auto !important; }
+
+  #showFavSelector > button {
+    width: 100%;
+    border: none;
+    height: 3rem;
+    font-weight: 800;
+    background-color: white;
+  }
+
+  #showFavSelector > button.selected {
+    border-bottom: solid var(--pink);
+  }
+  .slideshowNodesContainer {
+    height: 80vh;
+    overflow: hidden;
+    position: absolute;
+    right: 0.5rem;
+  }
+
+  .slideshowNode{
+    min-height: 0.75rem;
+  }
+  .profile img {
+    max-height: 30vh !important;
+  }
+  .slideshowImages > * {
+    min-height: 72.5vh !important;
+    margin: 0.5rem 0;
+  }
+
+  .slideshowImages {
+    height: 72.5vh !important;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+}
