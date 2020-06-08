@@ -85,13 +85,25 @@ nav .heading svg {
   border-radius: 1rem;
   box-shadow: 0 15px 35px #BEB0B6;
   background-color: white;
+  transition: height 1s;
 }
 
-.profile img {
+.profilePicture {
   max-height: 50vh;
   width: 20rem;
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
+  animation: rise 0.5s ease-out;
+}
+
+.imgContainer { overflow: hidden; }
+
+@keyframes rise{
+  from {
+    max-height: 0vh;
+  } to {
+    max-height: 50vh;
+  }
 }
 
 .profile h1, .profile p{
@@ -119,7 +131,7 @@ nav .heading svg {
   margin: 0.5rem 0 0 0.5rem !important;
 }
 
-#quotationMark {
+.quotationMark {
   position: absolute;
   width: 2rem;
   margin-top: -0.5rem;
@@ -250,6 +262,7 @@ svg.settings:hover {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.5);
+  z-index: 2;
 }
 
 #settings {
@@ -337,9 +350,22 @@ svg.settings:hover {
   .slideshowNode{
     min-height: 0.75rem;
   }
-  .profile img {
-    max-height: 30vh !important;
+
+  @keyframes riseMobile{
+    from {
+      max-height: 0vh;
+    } to {
+      max-height: 30vh;
+    }
   }
+
+  .profilePicture {
+    max-height: 0vh;
+    width: 100% !important;
+    animation: riseMobile 0.5s ease-out forwards;
+  }
+
+
   .slideshowImages > * {
     min-height: 72.5vh !important;
     margin: 0.5rem 0;
@@ -355,6 +381,10 @@ svg.settings:hover {
 
   .slideshowImages {
     scroll-snap-type: none !important;
+  }
+
+  .heading {
+    display: none;
   }
 
 }

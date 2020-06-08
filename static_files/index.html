@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Dating site for cats, dogs and birds"
     />
     <style>
       body {
@@ -27,14 +27,18 @@
     <script src="lib/react.js"></script>
     <script src="lib/react-dom.js"></script>
     <script src="lib/babel.min.js"></script>
+    <!--<script src="lib/react.production.min.js"></script>
+    <script src="lib/react-dom.production.min.js"></script>-->
 
-    <title>React App</title>
+    <title>MatchMeow</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script src="slideshow.js" type="text/jsx"></script>
     <script src="app.js" type="text/jsx"></script>
+    <!--<script src="slideshow.js"></script>
+    <script src="app.js"></script>-->
 
     <script type="text/babel">
     ReactDOM.render(
@@ -44,6 +48,10 @@
         document.getElementById('root')
       );
     </script>
+
+    <!--<script>
+      ReactDOM.render( /*#__PURE__*/React.createElement(React.StrictMode, null, /*#__PURE__*/React.createElement(App, null)), document.getElementById('root'));
+    </script>-->
 
   </body>
 </html>

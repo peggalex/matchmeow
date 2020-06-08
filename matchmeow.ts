@@ -170,7 +170,9 @@ class ProfileCreator {
 			[{
 				name: {first, last}, 
 				location: {city, country}, 
-				dob: {age}
+				dob: {age},
+				email,
+				cell
 			}]
 		} = await waitForAjaxCall(
 			`https://randomuser.me/api/?gender=${genderPref}`
@@ -181,6 +183,8 @@ class ProfileCreator {
 			surname: last,
 			location: `${city}, ${country}`,
 			age: Math.round(parseInt(age)/humanToDogYears),
+			email,
+			cell,
 			imageSrc: imageSrc,
 			quote: quote
 		} as ProfileObj;
