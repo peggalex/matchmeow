@@ -314,11 +314,11 @@ svg.settings:hover {
   }
 
   .closeButton{ 
-    margin-left: -4rem !important; 
+    margin: 0 -8rem 4rem 0 !important; 
     position: absolute; 
   }
   .favButton{ 
-    margin-left: 4rem !important; 
+    margin: 0 8rem 4rem 0 !important; 
     position: absolute;
   }
 
